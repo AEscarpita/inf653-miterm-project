@@ -12,6 +12,8 @@
 
     Require_once '../../config/Database.php';
     Require_once '../../models/Quote.php';
+    Require_once '../../models/Author.php';
+    Require_once '../../models/Category.php';
     Require_once '../../functions/isVaild.php';
 
 
@@ -19,6 +21,8 @@
     $db = $database->connect();
 
     $quote = new Quote($db);
+    $author = new Author($db);
+    $category = new Category($db);
 
     //checks that id is a number
    if(isset($_GET['id'])){

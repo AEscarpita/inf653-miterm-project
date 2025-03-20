@@ -14,8 +14,8 @@ class Database {
         $this->username = getenv('USERNAME');
         $this->password = getenv('PASSWORD');
         $this->dbname = getenv('DBNAME');
-        $this->host = '5432';
-        $this->port = getenv('PORT');
+        $this->host = getenv('HOST');
+        $this->port = '5432';
     }
 
    public function connect(){

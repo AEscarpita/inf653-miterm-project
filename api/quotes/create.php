@@ -3,8 +3,8 @@
     $data = json_decode(file_get_contents("php://input"));
 
     //checks to see if all parameteres are entered correctly 
-    if(!$data){
-        echo json_encode(array('message' => 'Missing parameters'));
+    if(!$data || $data === {} || !$data->qoute || !$data->author_id || !$data->category_id ){
+        echo json_encode(array('message' => 'Missing Required Parameters'));
         exit();
     }
     

@@ -25,7 +25,7 @@
     $quote->category_id = $data->category_id; 
 
     //catches incorrect author_id or category_id values and displays correlating message
-    try{
+    //try{
         if($quote->create()){
             $quote->create_find_id();
             echo json_encode($quote);
@@ -34,13 +34,13 @@
             echo json_encode(array('Message' => 'Quote Not Created'));
         }
 
-    }catch(PDOException $e){
-        if(strpos($e->getMessage(), 'quotes_author_id')){
-            echo json_encode(array('Message' => "author_id Not Found"));
-        }elseif(strpos($e->getMessage(), 'quotes_category_id')){
-            echo json_encode(array('Message' => "category_id Not Found"));
-        }
-    }
+   // }catch(PDOException $e){
+        //if(strpos($e->getMessage(), 'quotes_author_id')){
+            //echo json_encode(array('Message' => "author_id Not Found"));
+        //}elseif(strpos($e->getMessage(), 'quotes_category_id')){
+            //echo json_encode(array('Message' => "category_id Not Found"));
+        //}
+    //}
     
 
 

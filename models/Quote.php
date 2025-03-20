@@ -70,9 +70,8 @@ class Quote {
 
         
         $this->quote = $row['quote'];
-        $this->author = $row['author'];
-        $this->category = $row['category'];
-
+        $author->author = $row['author'];
+        $category->category =$row['category'];
 
 
     }

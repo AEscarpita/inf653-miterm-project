@@ -9,7 +9,7 @@
         exit();
 
     }    
-    if(!isset($data->category)){
+    if(!isset($data->author)){
         echo json_encode(array('message' => 'Missing Required Parameters'));
         exit();
     }

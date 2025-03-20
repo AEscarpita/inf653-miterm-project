@@ -8,7 +8,7 @@ class Quote {
 
     //Quote Properties
     public $id;
-    public $category;
+    public $quote;
     public $author_id;
     public $category_id;
 

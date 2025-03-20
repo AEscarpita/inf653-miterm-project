@@ -11,16 +11,11 @@ if(!$data || $data->author === null){
 
 $author->author = $data->author; 
 
-$created_author = array();
+
 
 if($author->create()){
-    $author->create_find_id();
-    $author_item = array(
-        'id' => $author->id,
-        'author' => $author->author
-    );
-    array_push($created_author, $author_item);
-    echo json_encode($created_author);
+    $author->create_find_id();    
+    echo json_encode($author);
 
 }else{
     echo json_encode(array('Message' => 'Author Not Created'));

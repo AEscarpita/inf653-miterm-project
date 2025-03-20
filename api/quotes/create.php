@@ -28,7 +28,7 @@
     try{
         if($quote->create()){
             $quote->create_find_id();
-            echo json_encode($quote));
+            echo json_encode($quote);
 
         }else{
             echo json_encode(array('Message' => 'Quote Not Created'));

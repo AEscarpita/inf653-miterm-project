@@ -3,23 +3,14 @@
     $data = json_decode(file_get_contents("php://input"));
 
     //checks if data was entered corrently and if not displays a missing parameteres message 
-    if(!$data){
-        echo json_encode(array('Message' => 'Missing parameters'));
+    //checks that there is an entered category and if there is not displays a message
+    if(!$data || $data === "{}"  ){
+        echo json_encode(array('message' => 'Missing Required Parameters'));
         exit();
-    }if(isVaild($data->id)){
-        echo json_encode(array('Message' => 'Missing parameters(id must be a number)'));
-        exit();
-    }
-    if (!$data->quote){
-        echo json_encode(array('Message' => 'Missing parameters'));
-        exit();
-    }
-    if (isVaild($data->author_id)){
-        echo json_encode(array('Message' => 'Missing parameters(author_id must be a number)'));
-        exit();
-    }
-    if (isVaild($data->category_id)){
-        echo json_encode(array('Message' => 'Missing parameters(category_id must be a number)'));
+
+    }    
+    if(!isset($data->category)){
+        echo json_encode(array('message' => 'Missing Required Parameters'));
         exit();
     }
 
@@ -40,9 +31,9 @@
         }
 
     }catch(PDOException $e){
-        if(strpos($e->getMessage(), 'quotes_author_id')){
-            echo json_encode(array('Message' => "author_id Not Found"));
-        }elseif(strpos($e->getMessage(), 'quotes_category_id')){
-            echo json_encode(array('Message' => "category_id Not Found"));
+        if(strpos($e->getMessage(), 'qoutes_author_id_key')){
+            echo json_encode(array('message' => "author_id Not Found"));
+        }elseif(strpos($e->getMessage(), 'qoutes_category_id_key')){
+            echo json_encode(array('message' => "category_id Not Found"));
         }
     }

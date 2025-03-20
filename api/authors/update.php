@@ -3,14 +3,14 @@
 
     $data = json_decode(file_get_contents("php://input"));
 
-    if(!$data){
-        echo json_encode(array('Message' => 'Missing parameters'));
+    //checks that there is an entered category and if there is not displays a message
+    if(!$data || $data === "{}"  ){
+        echo json_encode(array('message' => 'Missing Required Parameters'));
         exit();
-    }else if (isVaild($data->id)){
-        echo json_encode(array('Message' => 'Missing parameters(id must be a number)'));
-        exit();
-    }else if ($data->author === null){
-        echo json_encode(array('Message' => 'Missing parameters'));
+
+    }    
+    if(!isset($data->category)){
+        echo json_encode(array('message' => 'Missing Required Parameters'));
         exit();
     }
 

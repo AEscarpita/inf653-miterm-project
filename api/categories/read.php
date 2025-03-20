@@ -7,7 +7,7 @@
 
 	if($num > 0 ){
 
-	$categroy_arr = array();
+	$category_arr = array();
 	
 
 	while($row = $result->fetch(PDO::FETCH_ASSOC)) {

@@ -66,7 +66,7 @@ class Quote {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if(!$row){
-                echo json_encode(array('Message' => 'No Quotes found'));
+                echo json_encode(array('message' => 'No Quotes Found'));
             exit();
             }
 

@@ -35,7 +35,7 @@
         }
 
     }catch(PDOException $e){
-        echo json_encode(array('Message' => e->getMessage()));
+        echo json_encode(array('Message' => $e->getMessage()));
         //if(strpos($e->getMessage(), 'quotes_author_id')){
             //echo json_encode(array('Message' => "author_id Not Found"));
         //}elseif(strpos($e->getMessage(), 'quotes_category_id')){

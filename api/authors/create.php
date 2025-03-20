@@ -20,7 +20,7 @@ if($author->create()){
         'author' => $author->author
     );
     array_push($created_author, $author_item);
-    echo json_encode($createdAuthor);
+    echo json_encode($created_author);
 
 }else{
     echo json_encode(array('Message' => 'Author Not Created'));

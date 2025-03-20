@@ -14,7 +14,7 @@ $category->category = $data->category;
 
 if($category->create()){
     $category->create_find_id();
-    echo json_encode(array('Message' => 'created category ( id: '. $category->id .  ' , category: ' . $category->category . ' )'));
+    echo json_encode($category);
 
 }else{
     echo json_encode(array('Message' => 'Category Not Created'));

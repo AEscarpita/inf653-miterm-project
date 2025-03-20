@@ -10,7 +10,7 @@ if(isVaild($data->id)){
 $author->id = $data->id;
 
 if($author->delete()){
-    echo json_encode(array('Message' => 'Author with id: ' . $author->id . ' Deleted'));
+    echo json_encode(array('id' => $author->id));
 
 }else{
     echo json_encode(array('Message' => 'No Authors Found'));

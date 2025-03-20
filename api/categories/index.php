@@ -47,10 +47,10 @@
         require_once 'update.php';
     }
 
-    //if($method === 'POST'){
-        //require_once 'create.php';
-    //}
+    if($method === 'POST'){
+        require_once 'create.php';
+    }
 
-    //if($method === 'DELETE'){
-       // require_once 'delete.php';
-  //  }
+    if($method === 'DELETE'){
+        require_once 'delete.php';
+    }

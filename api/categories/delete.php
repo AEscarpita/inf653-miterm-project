@@ -11,7 +11,7 @@
     $category->id = $data->id;
 
     if($category->delete()){
-        echo json_encode(array('Message' => 'Category with id: ' . $category->id . ' Deleted'));
+        echo json_encode(array('id' => $category->id));
 
     }else{
         echo json_encode(array('Message' => 'No Categories Found'));

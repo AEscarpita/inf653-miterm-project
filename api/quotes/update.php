@@ -26,7 +26,7 @@
             echo json_encode($quote);
 
         }else{
-            echo json_encode(array('Message' => 'No quotes Found'));
+            echo json_encode(array('message' => 'No Quotes Found'));
         }
 
     }catch(PDOException $e){

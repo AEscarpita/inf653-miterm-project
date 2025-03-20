@@ -196,8 +196,6 @@ class Quote {
         
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        echo json_encode(array('Message' => $result));
-
         //checks that the id actually changes a qoute 
         if($result === []){
             return true;

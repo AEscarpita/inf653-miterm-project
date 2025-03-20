@@ -20,7 +20,7 @@
     $author->author = $data->author; 
 
     if($author->update()){
-        echo json_encode(array('Message' => 'Updated author ( id: ' .  $author->id . ", author: " . $author->author .  ")"));
+        echo json_encode($author);
 
     }else{
         echo json_encode(array('Message' => 'Author not Updated'));

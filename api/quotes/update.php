@@ -7,9 +7,8 @@
     if(!$data || $data === "{}"  ){
         echo json_encode(array('message' => 'Missing Required Parameters'));
         exit();
-
-    }    
-    if(!isset($data->category)){
+    }
+    if(!isset($data->quote) || !isset($data->author_id) || !isset($data->category_id)){
         echo json_encode(array('message' => 'Missing Required Parameters'));
         exit();
     }
@@ -24,7 +23,7 @@
     //catches incorrect author_id or category_id values and displays correlating message
     try{
         if($quote->update()){
-            echo json_encode(array('Message' => 'Updated quote ( id: ' .  $quote->id . ", quote: " . $quote->quote . ", author_id: " .  $quote->author_id . ", category_id: " . $quote->category_id . ")"));
+            echo json_encode(echo json_encode($quote));
 
         }else{
             echo json_encode(array('Message' => 'No quotes Found'));

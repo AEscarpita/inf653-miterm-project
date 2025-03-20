@@ -23,7 +23,7 @@
     //catches incorrect author_id or category_id values and displays correlating message
     try{
         if($quote->update()){
-            echo json_encode(echo json_encode($quote));
+            echo json_encode($quote);
 
         }else{
             echo json_encode(array('Message' => 'No quotes Found'));

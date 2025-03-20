@@ -6,11 +6,9 @@ $quote->id = isset($_GET['id']) ? $_GET['id'] : die();
 
 	$result = $quote->read_single();
 
-	echo json_encod($result);
-
 	$quote->quote = $result['quote']; 
-	$author->author = $result->['author'];
-	$category->categor = $result['category'];
+	$author->author = $result['author'];
+	$category->category = $result['category'];
 
 	$quote_arr = array(
     	'id' => (int)$quote->id,

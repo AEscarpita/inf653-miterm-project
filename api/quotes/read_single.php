@@ -4,7 +4,11 @@
 
 $quote->id = isset($_GET['id']) ? $_GET['id'] : die();
 
-	$quote->read_single();
+	$result = $quote->read_single();
+
+	$quote->quote = $result['quote']; 
+	$author->author = $result->['author'];
+	$category->categor = $result['category'];
 
 	$quote_arr = array(
     	'id' => (int)$quote->id,

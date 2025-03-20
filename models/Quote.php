@@ -68,12 +68,7 @@ class Quote {
             exit();
             }
 
-        
-        $this->quote = $row['quote'];
-        $author->author = $row['author'];
-        $category->category =$row['category'];
-
-
+            return $row;
     }
 
     //Gets multiple quotes using a given author_id and category_id 

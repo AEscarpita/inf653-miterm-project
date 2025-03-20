@@ -19,7 +19,7 @@ if($author->create()){
         'id' => $author->id,
         'author' => $author->author
     );
-    array_push($created_author $author_item);
+    array_push($created_author, $author_item);
     echo json_encode($createdAuthor);
 
 }else{

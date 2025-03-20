@@ -9,7 +9,6 @@
 	if($num > 0 ){
 
 	$quote_arr = array();
-	$quote_arr['Quote Data'] = array();
 
 	while($row = $result->fetch(PDO::FETCH_ASSOC)) {
 
@@ -22,7 +21,7 @@
 				'category' => $category
 			);
 
-			array_push($quote_arr['Quote Data'], $quote_item);
+			array_push($quote_arr, $quote_item);
 
 	}
 

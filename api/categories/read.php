@@ -8,7 +8,7 @@
 	if($num > 0 ){
 
 	$categroy_arr = array();
-	$category_arr['Category Data'] = array();
+	
 
 	while($row = $result->fetch(PDO::FETCH_ASSOC)) {
 
@@ -19,7 +19,7 @@
 				'category' => $category
 			);
 
-			array_push($category_arr['Category Data'], $category_item);
+			array_push($category_arr, $category_item);
 
 	}
 

@@ -15,7 +15,7 @@ class Database {
         $this->password = getenv('PASSWORD');
         $this->dbname = getenv('DBNAME');
         $this->host = getenv('HOST');
-        $this->port = '5432';
+       
     }
 
    public function connect(){
@@ -25,7 +25,7 @@ class Database {
             
        }else{
 
-            $dsn = "pgsql:host={$this->host};port={$this->port};dbname={$this->dbname};";
+            $dsn = "pgsql:host={$this->host};dbname={$this->dbname};";
 
             try{
                 $this->conn = new PDO($dsn, $this->username, $this->password);

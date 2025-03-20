@@ -4,21 +4,10 @@
 
     //checks to see if all parameteres are entered correctly 
     if(!$data){
-        echo json_encode(array('Message' => 'Missing parameters'));
+        echo json_encode(array('message' => 'Missing parameters'));
         exit();
     }
-    if (!$data->quote){
-        echo json_encode(array('Message' => 'Missing parameters'));
-        exit();
-    }
-    if (!$data->author_id){
-        echo json_encode(array('Message' => 'Missing parameters'));
-        exit();
-    }
-    if (!$data->category_id){
-        echo json_encode(array('Message' => 'Missing parameters'));
-        exit();
-    }
+    
 
     $quote->quote = $data->quote;
     $quote->author_id = $data->author_id;
